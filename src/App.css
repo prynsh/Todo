@@ -1,3 +1,55 @@
-.btn{
-    border-radius: 50%;
-}
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .light-mode {
+    background-color: white;
+    color: black;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .update-button{
+    height: 35px;
+  }
+ 
+  
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes the button circular */
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+  }
+  
+  .toggle-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+  }
+  
+  .dark-mode .toggle-button {
+    background-color: white; /* Change button color in dark mode */
+    color: black; /* Change text color in dark mode */
+  }
+  
+  /* Add hover effect for dark mode */
+  .dark-mode .toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Change background color on hover in dark mode */
+  }
+  

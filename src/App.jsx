@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-// import App.css from './App.css'
+import './App.css'
 
 let counter =4;
 function App() {
@@ -16,30 +16,35 @@ function App() {
     title: "Go for a run",
     description: "Take a jog in the park for 30 minutes to get some exercise and fresh air."
   }])
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    setDarkMode(prevMode => !prevMode);
+  }
 
   function AddTodo(){
-    // setTodo[todo.push({
-    //   id:4,
-    //   title: "Now how to demean bot",
-    //   description: "Will think about it later",
-    // })]
-    setTodo([...todo,{// this is to push into the array without using the loop ... basically spreads the array 
+    setTodo([...todo,{
       id:counter++,
       title: "Read a book",
       description: "Spend some time reading a book you've been meaning to get to. Choose a novel, a non-fiction book, or whatever interests you at the moment."
     },])
   }
 
-
   return (
-    <>
-    <button className='btn' onClick={AddTodo}>Click me to update a Todo</button>
-     {todo.map(todo =><CreateTodo key={todo.id}
-     title= {todo.title} 
-     description={todo.description} 
-     />)}
-    </>
-  )
+    <div id="dark" className={darkMode ? 'dark-mode' : 'light-mode'}>
+      <button className='toggle-button' onClick={toggleDarkMode}>
+        {darkMode ? <i className="material-icons">brightness_7</i> : <i className="material-icons">brightness_4</i>}
+      </button>
+      <button className='update-button' onClick={AddTodo}>Click me to update a Todo</button>
+      {todo.map(item => (
+        <CreateTodo 
+          key={item.id}
+          title={item.title} 
+          description={item.description} 
+        />
+      ))}
+    </div>
+  );
 }
 function CreateTodo({title,description}){
   return<>
